@@ -22,7 +22,7 @@
     </div>
     <div class="text-box">
         <h1 class="mb-5 text-center">Sign Up</h1>
-        <form class="card bg-dark py-5 px-4" action="/" method="POST" onsubmit="return validateForm()">
+        <form class="card bg-dark py-5 px-4" action="/" method="POST">
             <p>Enter Your Name</p>
             <input type="text" name="username"  required/>
             <p>Enter Your Age</p>
@@ -39,8 +39,6 @@
             <input type="text" name="university"  required/>
             <p>Enter Your Password</p>
             <input type="text" name="userPassword"  required/>
-            <p>Confirm Password</p>
-            <input type="password" name="confirmPassword" id="confirmPassword" required />
             <p class="text-danger warning" id="passwordError"></p>
             <p class="text-danger warning" th:if="${warning}" th:text="${warning}"></p>
             <button type="submit" class="btn btn-warning">Sign Up</button>
@@ -53,19 +51,5 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- JavaScript validation -->
-<script>
-    function validateForm() {
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("confirmPassword").value;
-
-        if (password !== confirmPassword) {
-            document.getElementById("passwordError").textContent = "Passwords do not match.";
-            return false;
-        }
-
-        return true;
-    }
-</script>
 </body>
 </html>
